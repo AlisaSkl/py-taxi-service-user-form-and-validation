@@ -8,7 +8,7 @@ from taxi.models import Driver, Car
 
 def validator_license_number(value):
 
-    if not (value[:3].isupper()):
+    if not (value[:3].isupper() and value[:3].isalpha()):
         raise ValidationError(
             "Ensure that the first 3 characters are uppercase"
         )
